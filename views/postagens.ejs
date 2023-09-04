@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Postagens</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lista de Postagens</h1>
+        <div class="row">
+            <% publicacoes.forEach((postagem) => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="<%= postagem.thumbImage %>" class="card-img-top" alt="<%= postagem.thumbImageAltText %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= postagem.title %></h5>
+                            <p class="card-text"><%= postagem.description %></p>
+                            <p class="card-text">Autor: <%= postagem.profileName %></p>
+                            <p class="card-text">Data: <%= postagem.postDate %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
